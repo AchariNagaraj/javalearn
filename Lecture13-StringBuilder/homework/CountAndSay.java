@@ -3,27 +3,40 @@ import java.util.*;//this problem is not in-place friendly because the insert wi
 public class CountAndSay{
     static StringBuilder countandsay(StringBuilder str){
         StringBuilder sb2=new StringBuilder();
-        int i=0,count=0;
-        for(int j=0;j<str.length();j++){
-            if(str.charAt(i)==str.charAt(j)){
-                count++;
+        // int i=0,count=0;
+        // for(int j=0;j<str.length();j++){
+        //     if(str.charAt(i)==str.charAt(j)){
+        //         count++;
 
-            }
-            else{
-                sb2.append(count);
-                sb2.append(str.charAt(i));
-                i=j;
-                j--;
-                count=0;
+        //     }
+        //     else{
+        //         sb2.append(count);
+        //         sb2.append(str.charAt(i));
+        //         i=j;
+        //         j--;
+        //         count=0;
 
-            }
-            if(i==str.length()-1 && j==str.length()-1){
-                sb2.append(count);
-                sb2.append(str.charAt(i));
-            }
+        //     }
+        //     if(i==str.length()-1 && j==str.length()-1){
+        //         sb2.append(count);
+        //         sb2.append(str.charAt(i));
+        //     }
                 
-        }
-        return sb2;
+        // }
+        // return sb2;
+
+            int i=0,count=1;
+            for(i=1;i<=str.length();i++){
+                if(i<str.length() && str.charAt(i)==str.charAt(i-1)){
+                    count++;
+                }
+                else{
+                    sb2.append(count);
+                    sb2.append(str.charAt(i-1));
+                    count=1;
+                }
+            }
+            return sb2;
 
     }
     public static void main(String args[]){
