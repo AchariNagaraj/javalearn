@@ -11,6 +11,7 @@ public class SearchElement {
                 a[i][j]=sc.nextInt();
             }
         }
+        
         System.out.println("Enter element to be searched:");
         int n=sc.nextInt();
         int found=0;
